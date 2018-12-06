@@ -1,0 +1,42 @@
+{
+  "extends": ["airbnb", "plugin:fp/recommended"],
+  "env": {
+    "shared-node-browser": true,
+    "es6": true
+  },
+  "plugins": ["fp"],
+  "settings": {
+    "react": {
+      "version": "16.2.0"
+    }
+  },
+  "rules": {
+    "arrow-parens": [2, "as-needed"],
+    "arrow-body-style": [2, "as-needed"],
+    "newline-per-chained-call": 0,
+    "implicit-arrow-linebreak": 0,
+    "comma-dangle": [2, "never"],
+    "function-paren-newline": [2, "consistent"],
+    "max-len": [2, { "code": 100 }],
+
+    "fp/no-mutation": [2, {
+      "exceptions": [
+        { "property": "propTypes" },
+        { "property": "defaultProps" }
+      ]
+    }],
+    "fp/no-nil": 1,
+
+    "import/prefer-default-export": 0,
+
+    "react/jsx-filename-extension": 0
+  },
+  "overrides": [
+    {
+      "files": "*.test.js",
+      "rules": {
+        "fp/no-unused-expression": 0
+      }
+    }
+  ]
+}
